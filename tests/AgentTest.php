@@ -10,6 +10,9 @@ class AgentTest extends TestCase
 {
     private $Agent;
 
+    /**
+     * Default setup.
+     */
     public function setUp(): void
     {
         $this->Agent = new Agent();
