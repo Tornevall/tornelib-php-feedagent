@@ -1,0 +1,9 @@
+composer.phar
+composer.lock
+/vendor/
+.idea
+Makefile
+source
+.php_cs.cache
+tests/config.json
+.phpunit*
