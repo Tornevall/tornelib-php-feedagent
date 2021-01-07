@@ -1,0 +1,21 @@
+pipelines:
+  default:
+    - parallel:
+        - step:
+            name: FeedAgent
+            image: php:8.0
+            caches:
+              - composer
+            script:
+              - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+              - composer require phpunit/phpunit
+              - vendor/bin/phpunit --configuration ./phpunit.xml
+        - step:
+            name: NetCURL 6.1/PHP 7.4
+            image: php:7.4
+            caches:
+              - composer
+            script:
+              - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+              - composer require phpunit/phpunit
+              - vendor/bin/phpunit --configuration ./phpunit.xml
