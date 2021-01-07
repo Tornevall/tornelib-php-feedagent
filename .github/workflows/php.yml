@@ -6,13 +6,12 @@ on:
   pull_request:
     branches: [ master ]
 
-# PHP 7.3-7.4: phpunit-9.x
 jobs:
   build-unit-9:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-version: [ '7.4', '8.0' ]
+        php-version: [ '7.4' ]
     name: PHP ${{ matrix.php-version }}
     steps:
       - uses: actions/checkout@v2
