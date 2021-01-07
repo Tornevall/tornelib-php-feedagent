@@ -26,6 +26,9 @@ class AgentTest extends TestCase
         self::assertTrue(get_class(new Agent()) === Agent::class);
     }
 
+    /**
+     * @testdox Test that the storage engine returns anything.
+     */
     public function testStorageAgent(): void
     {
         self::assertTrue((strlen($this->Agent->getStorageEngine()) > 3));
