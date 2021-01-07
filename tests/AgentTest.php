@@ -18,6 +18,9 @@ class AgentTest extends TestCase
         $this->Agent = new Agent();
     }
 
+    /**
+     * @testdox Regular class check.
+     */
     public function testMainAgent(): void
     {
         self::assertTrue(get_class(new Agent()) === Agent::class);
