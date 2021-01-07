@@ -28,14 +28,16 @@ class ComposerStaticInitb87e42718c5847dd1d9f954ffc064748
     public static $prefixDirsPsr4 = array (
         'TorneLIB\\' => 
         array (
-            0 => __DIR__ . '/..' . '/tornevall/tornelib-php-crypto/src',
-            1 => __DIR__ . '/..' . '/tornevall/tornelib-php-errorhandler/src',
-            2 => __DIR__ . '/..' . '/tornevall/tornelib-php-flags/src',
-            3 => __DIR__ . '/..' . '/tornevall/tornelib-php-io/src',
-            4 => __DIR__ . '/..' . '/tornevall/tornelib-php-netcurl/src',
-            5 => __DIR__ . '/..' . '/tornevall/tornelib-php-network/src',
-            6 => __DIR__ . '/..' . '/tornevall/tornelib-php-utils/src',
-            7 => __DIR__ . '/..' . '/tornevall/tornelib-php-version/src',
+            0 => __DIR__ . '/../..' . '/src',
+            1 => __DIR__ . '/..' . '/tornevall/tornelib-php-crypto/src',
+            2 => __DIR__ . '/..' . '/tornevall/tornelib-php-database/src',
+            3 => __DIR__ . '/..' . '/tornevall/tornelib-php-errorhandler/src',
+            4 => __DIR__ . '/..' . '/tornevall/tornelib-php-flags/src',
+            5 => __DIR__ . '/..' . '/tornevall/tornelib-php-io/src',
+            6 => __DIR__ . '/..' . '/tornevall/tornelib-php-netcurl/src',
+            7 => __DIR__ . '/..' . '/tornevall/tornelib-php-network/src',
+            8 => __DIR__ . '/..' . '/tornevall/tornelib-php-utils/src',
+            9 => __DIR__ . '/..' . '/tornevall/tornelib-php-version/src',
         ),
         'Laminas\\ZendFrameworkBridge\\' => 
         array (
@@ -55,11 +57,22 @@ class ComposerStaticInitb87e42718c5847dd1d9f954ffc064748
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'J' => 
+        array (
+            'JsonMapper' => 
+            array (
+                0 => __DIR__ . '/..' . '/netresearch/jsonmapper/src',
+            ),
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitb87e42718c5847dd1d9f954ffc064748::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitb87e42718c5847dd1d9f954ffc064748::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitb87e42718c5847dd1d9f954ffc064748::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
